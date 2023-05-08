@@ -1,0 +1,39 @@
+<% if @album.images.attached? %>
+  <% @album.images.each do |image|%>
+    <div class="album_box">
+      <div class="image_box  m-1 col">  
+        <%= image_tag image, :class=>"border image"%>   
+      </div>   
+      <button type="button" class="text-captialize links " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        open image
+      </button>
+    </div>    
+      <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <%= image_tag image,  class:"container-fluid image"%>
+          </div>
+          <div class="modal-footer">
+            <%# <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> %>
+            <%= link_to "download", rails_blob_path(image, disposition: 'attachment'),class: 'btn btn-dark text-capitalize'  %>
+            <%# <button type="button" class="btn btn-primary">Understood</button> %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% if current_user == @album.user %>
+      <%= link_to "Delete",purge_album_path(image), data: {
+            turbo_method: :delete,
+            turbo_confirm: "Are you sure?"
+        },:class=>"links mx-auto bg-light",:class=>"text" %>
+    <%end%> 
+  <%end%>
+<%end %>
+
+
+

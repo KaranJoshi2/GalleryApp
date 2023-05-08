@@ -1,0 +1,27 @@
+<%= form_with model: @album do |form| %>
+  <div class="form-box mx-auto p-2">
+    <%= form.label :title, :class=>"label"%><br>
+    <%= form.text_field :title, :class=>"type-box"%>
+  </div>
+
+  <div class=" form-box mx-auto p-2">
+    <%= form.label :description, :class=>"label" %><br>
+    <%= form.text_area :description, :class=>"type-box" %>
+  </div>
+
+  <div class=" form-box mx-auto p-2">
+    <%= form.label "Tags", :class=>"label" %><br>
+    <%= form.text_area :all_tags, :class=>"type-box" %>
+  </div>
+
+
+  <%# <div class=" form-box mx-auto p-2">
+    <%= form.file_field :images, multiple: true, :class=>"choose-box"%>
+  <%# </div> %>
+
+  <div class="form-box mx-auto p-2">
+     <%= form.submit class:"type-box btn" %>
+  </div>
+ 
+<% end %>
+

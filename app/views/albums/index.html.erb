@@ -1,0 +1,35 @@
+<div class=" explore ">
+  <div class="my-2 search_box ">
+    <%= search_form_for @q, url: :root do |form| %>
+      <div class="d-flex search_form mx-auto">
+        <%= form.text_field :tags_name_cont, class:"container-md search p-2"%>
+        <%= form.submit class:"btn  search_btn"%>
+      </div>
+    <%end%>
+    <h2 class="line my-5 text-center"> Search Your Favourite Albums...</h2>
+    <br>
+  </div>
+  <div class="my-5">
+    <% if @albums.empty? %>
+      <p class="text-center alb">No albums found.</p>
+    <% else %>
+      <ul class="container-xxl justify-content-center mx-auto row">
+        <% @albums.each do |album|%>
+          <div class="album_box m-2 col">    
+            <% if album.images.attached? %>         
+             <%= image_tag album.images.first, :class=>"image"%>
+            <%else%>
+             <%= image_tag "pimage (1).jpg", :class=>"image" %>
+            <%end%> 
+            <div class="middle">
+              <%= link_to album.title, album_path(album),:class=>"text" %>
+            </div>                 
+            <div class="middle2">
+              <%= link_to album.description, album_path(album),:class=>"text" %>
+            </div>  
+          </div>      
+        <%end%>
+      </ul>
+    <%end %>
+  </div>
+</div>

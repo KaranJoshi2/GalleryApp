@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-md border  ">
+  <div class="container-fluid ">
+    <%= link_to image_tag("Screenshot_from_2023-04-27_12-51-58-removebg-preview.png",style: "max-height:49px"), root_path,:class=>"logo" %>
+    <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon "></span>
+    </button>
+    
+    <div class="collapse navbar-collapse container " id="navbarTogglerDemo02">
+      <ul class="navbar-nav links">
+          <%# NEW ALBUM %>
+        <li class="nav-item container-fluid position-relative start-0 col-4">
+          <% if user_signed_in? %>
+            <%= link_to "New Album",new_album_path,:class=>"nav-link" %>
+          <%end%>
+        </li>
+        <%# # MY ALBUMS %> 
+        <li class="nav-item container position-relative start-0 col-2">
+          <% if user_signed_in? %>
+            <%= link_to "Profile", my_albums_path,:class=>"nav-link" %>
+          <%end%>
+        </li>
+        <%# SIGN IN/OUT %>
+        <li class="nav-item container position-relative start-0 col-2">
+          <% if user_signed_in? %> 
+            <%= link_to "LogOut", destroy_user_session_path,  data: {
+                   turbo_method: :delete,
+                   turbo_confirm: "Do you want to LogOut?"
+                   }, :class=>"nav-link container signOut mx-auto" %> 
+          <% else %>
+            <%= link_to"Sign in", new_user_session_path, :class=>"nav-link " %> 
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

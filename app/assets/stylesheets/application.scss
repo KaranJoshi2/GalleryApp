@@ -1,0 +1,96 @@
+@import "form";
+@import "home";
+@import "devise";
+
+* {
+  box-sizing: border-box;
+  font-family: serif;
+  // border: black;
+
+  // font-variant: small-caps;
+  letter-spacing: 1px;
+}
+
+.body {
+  // background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+  min-height: 100%;
+
+  padding: 0 3rem;
+  margin: 0;
+  padding-bottom: 10rem;
+  // 
+}
+
+.navbar {
+  height: 5rem;
+  box-shadow: 0 0 4px rgb(183, 171, 49);
+  background-color: rgba(80, 76, 60, 0.9);
+  margin-bottom: 0;
+
+  // align-items: end;
+  // border: 1px solid orangered;
+  .logo {
+    margin-inline-end: 8.8rem;
+    max-width: 40%;
+    // box-shadow: 0 0 4px rgb(183, 171, 49);
+  }
+
+  .collapse {
+    float: right;
+    text-align: center;
+    transition:0.2s ease-in-out;
+    .links {
+      width: 100%;
+      justify-content: space-evenly;
+      text-align: center;
+      .nav-item {
+        // border: 2px solid orange;
+
+        .nav-link {
+          color: rgb(0, 0, 0);
+          font-weight: 800;
+          font-size: 1rem;
+          text-shadow: 0px 4px 5px rgb(162, 162, 0);
+          // border: 1px solid gold;
+
+          &:hover {
+            color: rgb(224, 206, 2);
+            // font-weight: 500;
+            // font-size: 102%;
+            text-shadow: 0px 4px 3px rgb(30, 30, 0);
+            transition-duration: 0.1s;
+          }
+
+
+        }
+
+        .signOut {
+          @extend .nav-link;
+          border: none;
+          background: none;
+          outline: none;
+        }
+
+
+      }
+
+    }
+
+    @media screen and (max-width: 768px) {
+      position: absolute;
+      top: 90%;
+      right:0%;
+      background-color: rgb(105, 98, 77);
+      .nav-item{
+        width:100%;
+        &:hover{
+          background-color: rgb(139, 132, 110);
+        }
+        //  background-color: rgba(142, 137, 119, 0.9);
+      }
+
+    }
+  }
+
+}

@@ -1,0 +1,19 @@
+<div class=" form border mx-auto py-4">
+<h2 class="text-center label">Resend confirmation instructions</h2>
+
+<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="form-box mx-auto p-2">
+    <%= f.label :email, :class=>"label"  %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), :class=>"type-box"  %>
+  </div>
+
+  <div class="form-box mx-auto p-2">
+    <%= f.submit "Resend confirmation instructions", :class=>"type-box btn"  %>
+  </div>
+<% end %>
+<div class="link_box">
+<%= render "devise/shared/links" %>
+</div>
+</div>

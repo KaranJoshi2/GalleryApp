@@ -1,0 +1,48 @@
+<div class="explore mx-auto text-left">
+  <div class="container-fluid rounded head">
+    <div class=" row">
+      <div class="container-fluid  mt-1  col">
+        <div class="row container " >
+          <h2 class="name col "><%= current_user.email%></h2> <%= link_to "Edit Profile", edit_user_registration_path(current_user), :class=>" links col "%>
+        </div>
+         <br>
+        <div> 
+          <p class="count container ">Total Albums: <%= current_user.albums.count%></p>
+        </div>
+        <div class="container" >
+          <%= link_to "New Album ", new_album_path, :class=>"links container text-center" %>
+        </div>
+      </div>
+    </div> 
+  </div>
+  <hr>
+  <div class="container mt-5 ">
+    <div class="container-xxl text-center justify-content-center mx-auto m-4 row">
+      <%if @albums.present? %>
+        <% @albums.each do |album|%>
+          <div class="album_box m-2 col">    
+            <% if album.images.attached? %>         
+              <%= image_tag album.images.first, :class=>"image"%>
+            <%else%>
+              <%= image_tag "animals.jpeg", :class=>"image"%>
+            <%end%> 
+            <div class="middle">
+              <%= link_to album.title, album_path(album),:class=>"text" %>
+            </div>                 
+            <div class="middle2">
+              <%= link_to album.description, album_path(album),:class=>"text" %>
+              <br>
+              <%= link_to "Delete", album_path(album), data: {
+                 turbo_method: :delete,
+                 turbo_confirm: "Do you want to delete the Album?"
+                 }, :class=>"text" %> 
+            </div> 
+          </div>
+        <%end %>
+      <%else%>      
+        <h4 class="">No Album Yet</h4>       
+      <%end%>     
+    </div>
+      <%# <%end%>
+  </div>
+</div>
