@@ -24,7 +24,7 @@
   <div class="container mt-5 ">
     <div class=" justify-content-start mx-auto m-4 row">
       <%= form_with model: @album do |form| %> 
-        <%= form.submit class:"links col" %>
+        <%= form.submit "Upload", class:"links col" %>
         <%= form.file_field :images, multiple: true %>
         <%# <%= form.file_field :images, multiple: true, :class=>"field col-8" %>
       <%end%>

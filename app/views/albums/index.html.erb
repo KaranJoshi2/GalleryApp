@@ -2,12 +2,13 @@
   <div class="my-2 search_box ">
     <%= search_form_for @q, url: :root do |form| %>
       <div class="d-flex search_form mx-auto">
-        <%= form.text_field :tags_name_cont, class:"container-md search p-2"%>
+        <%= form.text_field :tags_name_cont, class:"container-md search p-2", placeholder: "Search by tag names"%>
         <%= form.submit class:"btn  search_btn"%>
       </div>
     <%end%>
-    <h2 class="line my-5 text-center"> Search Your Favourite Albums...</h2>
+    <h3 class="line my-2 text-center"> Search Your Favourite Albums...</h3>
     <br>
+    <%= render "tag"%>
   </div>
   <div class="my-5">
     <% if @albums.empty? %>

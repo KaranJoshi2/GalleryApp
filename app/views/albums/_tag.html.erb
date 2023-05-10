@@ -1,0 +1,5 @@
+<div class=" tag_box container p-3">
+   <% @albums.each do |album| %>
+    <div class=""> <%= raw album.tags.map(&:name).map { |t| link_to t , album_path(album),:class=> "mx-1 p-2 links"}.join(' ') %></div>
+  <% end %>
+</div>

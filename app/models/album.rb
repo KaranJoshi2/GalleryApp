@@ -1,10 +1,12 @@
 class Album < ApplicationRecord
+     
     has_many :taggings, dependent: :destroy
     has_many :tags, through: :taggings
     # has_one_attached :p_image
     has_many_attached :images
 
-    belongs_to :user, foreign_key: true
+    validates :title, presence: true
+    belongs_to :user
 
     def self.ransackable_attributes(auth_object = nil)
       ["created_at", "description", "id", "title", "updated_at", "user_id", "all_tags"]
@@ -13,9 +15,10 @@ class Album < ApplicationRecord
     def self.ransackable_associations(auth_object = nil)
       ["images_attachments", "images_blobs", "profile_image_attachment", "profile_image_blob","tags", "user"]
     end
+    
 
     def self.tagged_with(name)
-      Tag.find_by_name!(name).albums
+      Tag.find_by_name!(name: name).albums
     end
 
     def all_tags=(names)

@@ -47,21 +47,35 @@
       color: rgb(111, 108, 86);
       text-shadow: 0 2px 4px rgb(255, 255, 119);
     }
+    .tag_box{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      .links{
+        background-color: rgb(255, 238, 0);
+        color: rgb(150, 75, 1);
+        &:hover{
+          background-color: rgb(231, 216, 0);
+          box-shadow:0 0 4px orange;
+        }
+       } 
+    }
   }
 
 
   .album_box {
-    max-width: 230px;
+    max-width: 290px;
     min-width: 180px;
-    max-height: 220px;
+    max-height: 280px;
     border-radius: 5px;
     justify-content: space-around;
     background-color: rgb(255, 255, 253);
     box-shadow: 0 0 5px rgb(159, 158, 138);
 
     .image{
-      max-width: 100%;
-      min-width: 100%;
+      // max-width: 100%;
+      // min-width: 100%;
+      width: 100%;
     }
 
     .middle {
@@ -76,7 +90,7 @@
       .text {
         text-decoration: none;
         color: rgb(67, 67, 0);
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         font-weight: bold;
         text-shadow: 0 4px 4px rgb(163, 154, 124);
       }
@@ -90,13 +104,14 @@
 
       .text {
         @extend .text;
-        font-size: 1rem;
+        color:rgb(150, 150, 150);
+        font-size: 1.1rem;
       }
     }
 
     &:hover {
       background-color: rgb(255, 255, 255);
-      box-shadow: 0 0 7px rgb(173, 149, 52);
+      box-shadow: 0 0 2px rgb(173, 149, 52);
 
       .image {
         transition-duration: 0.4s;

@@ -17,7 +17,7 @@ class AlbumsController < ApplicationController
   def new
     @album = Album.new    
   end
-
+  
   def create
     @album = current_user.albums.create(album_params)
     
@@ -67,6 +67,6 @@ class AlbumsController < ApplicationController
 
   private
   def album_params
-    params.require(:album).permit(:title, :description, :foreign_key,  :all_tags, images: [])
+    params.require(:album).permit(:title, :description, :foreign_key, :all_tags, images: [])
   end
 end
