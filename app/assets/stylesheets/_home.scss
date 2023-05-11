@@ -1,14 +1,14 @@
 .explore {
   box-sizing: border-box;
-   padding: 0 1rem 3rem;
+  padding: 0 1rem 3rem;
   .search_box {
     width: 100%;
     min-width: 260px;
-    // border-bottom: 2px solid rgb(216, 216, 216);
 
     .search_form {
       max-width: 600px;
       min-width: 270px;
+
       .search {
         border-radius: 18px 0 0 18px;
         font-size: large;
@@ -56,7 +56,6 @@
   .album_box {
     max-width: 290px;
     min-width: 150px;
-    // max-height: 226px;
     border-radius: 5px;
     justify-content: space-around;
     align-items: center;
@@ -99,7 +98,7 @@
     max-width: 250px;
 
     .image{
-       border-radius: 5px;
+      border-radius: 5px;
       width: 100%;
     }
   }

@@ -25,8 +25,7 @@ class AlbumsController < ApplicationController
       redirect_to @album
     else
       render :new, status: :unprocessable_entity
-    end
-    
+    end    
   end
 
   def edit
@@ -41,28 +40,24 @@ class AlbumsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-
   end
 
   def destroy
     @album = Album.find(params[:id])
     @album.destroy
     redirect_to fallback_location: root_path, notice: "successfully deleted"
-    
   end
 
   def destroyAllImages
     @album = Album.find(params[:id])
     @album.images.purge
     redirect_to fallback_location: root_path, notice: "successfully deleted"
-    
   end
 
   def purge 
     @image = ActiveStorage::Attachment.find(params[:id])
     @image.purge
     redirect_to fallback_location: album_path, notice: "successfully deleted"
-  
   end  
 
   private

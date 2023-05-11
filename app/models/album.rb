@@ -2,10 +2,9 @@ class Album < ApplicationRecord
      
     has_many :taggings, dependent: :destroy
     has_many :tags, through: :taggings
-    # has_one_attached :p_image
     has_many_attached :images
 
-    validates :title, presence: true
+    validates :title, presence: true, uniqueness: true
     belongs_to :user
 
     def self.ransackable_attributes(auth_object = nil)

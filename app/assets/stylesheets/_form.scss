@@ -1,44 +1,43 @@
 .form{
-    width:28%;
-    margin-top: 4rem;  
-    font-family: Arial, Helvetica, sans-serif;
-    min-width:270px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 0px 6px rgb(229, 212, 191);
-
-    .form-box{
-        width:80%;
-        line-height: 1.3rem;
-        .label{
-          font-size: 1rem;;
-          font-weight: bold;
-        }
-        .type-box{
-            width:100%;
-            border:2px solid rgb(228, 228, 228);
-            border-radius: 9px ;
-            font-size: 1rem;
-            padding:0.4rem;
-            background-color: rgb(246, 246, 246);
-        }
-        .choose-box{
-            @extend .type-box;
-            background-color: white;
-            border:none;
-            button{
-               border-radius: 6px;
-            }
-        }
-        .btn{
-            line-height: 1.7rem;
-            border:none;
-            background-color: rgb(255, 221, 0);
-            box-shadow: 0 0 2px rgb(235, 204, 2);
-            &:hover{
-                background-color:  rgb(241, 209, 0);
-                box-shadow: 0 0 6px rgb(235, 204, 2);
-            }
-        }
+  width:28%;
+  margin-top: 4rem;  
+  font-family: Arial, Helvetica, sans-serif;
+  min-width:270px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0px 6px rgb(229, 212, 191);
+ .form-box{
+    width:80%;
+    line-height: 1.3rem;
+    .label{
+      font-size: 1rem;;
+      font-weight: bold;
     }
+    .type-box{
+      width:100%;
+      border:2px solid rgb(228, 228, 228);
+      border-radius: 9px ;
+      font-size: 1rem;
+      padding:0.4rem;
+      background-color: rgb(246, 246, 246);
+    }
+    .choose-box{
+      @extend .type-box;
+      background-color: white;
+      border:none;
+      button{
+         border-radius: 6px;
+      }
+    }
+    .btn{
+      line-height: 1.7rem;
+      border:none;
+      background-color: rgb(255, 221, 0);
+      box-shadow: 0 0 2px rgb(235, 204, 2);
+      &:hover{
+        background-color:  rgb(241, 209, 0);
+        box-shadow: 0 0 6px rgb(235, 204, 2);
+      }
+    }
+  }
 }

@@ -1,7 +1,13 @@
-<div class=" tag container text-center">
-Tags:
+<div class=" tag  container text-center">
+  Tags:  
+  <% tag_done = []%>
   <% @albums.each do |album| %>
-    <small><%= raw album.tags.map(&:name).map { |t| link_to t , album_path(album),:class=> "p-1 btn m-1"}.join(' ') %></small>
+    
+    <% album.tags.each do |tag| %>
+      <% if !tag_done.include?(tag.name) %>
+        <%= link_to tag.name, album_path(album), class: "p-1 btn m-1" %>
+        <% tag_done.push(tag.name) %>
+      <%end%>  
+    <% end %>
   <% end %>
-  
 </div>

@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   resources "albums" 
   delete "images/:id", to: "albums#purge", as: "purge_album"
   delete "album/:id", to: "albums#destroyAllImages", as: "delete_all_album"
-  # get 'tags/:tag', to: 'albums#index', as: "tag"
   get 'my_albums', to: 'albums#my_albums', as: "my_albums"
 end
  

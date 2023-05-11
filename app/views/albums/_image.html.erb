@@ -15,12 +15,12 @@
             <%= image_tag image,  class:"container-fluid image"%>
           </div>
           <div class="modal-footer">
-              <% if current_user == @album.user %>
-                <%= link_to "Delete",purge_album_path(image), data: {
-                      turbo_method: :delete,
-                      turbo_confirm: "Are you sure?"
-                  },:class=>"btn btn-dark text-capitalize" %>
-              <%end%> 
+            <% if current_user == @album.user %>
+              <%= link_to "Delete",purge_album_path(image), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                },:class=>"btn btn-dark text-capitalize" %>
+            <%end%> 
             <%= link_to "download", rails_blob_path(image, disposition: 'attachment'),class: 'btn btn-dark text-capitalize'  %>
           </div>
         </div>
