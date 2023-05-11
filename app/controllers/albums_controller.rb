@@ -48,7 +48,7 @@ class AlbumsController < ApplicationController
     redirect_to root_path, notice: "successfully deleted"
   end
 
-  def destroyAllImages
+  def destroy_all_images
     @album = Album.find(params[:id])
     @album.images.purge
     redirect_to fallback_location: root_path, notice: "successfully deleted"
