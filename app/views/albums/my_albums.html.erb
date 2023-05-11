@@ -20,7 +20,7 @@
     <div class="container-xxl text-center justify-content-center mx-auto m-4 row">
       <%if @albums.present? %>
         <% @albums.each do |album|%>
-          <div class="album_box m-2 col">    
+          <div class="p-1 album_box m-1 col text-capitalize">    
             <% if album.images.attached? %>         
               <%= image_tag album.images.first, :class=>"image"%>
             <%else%>
@@ -28,21 +28,12 @@
             <%end%> 
             <div class="middle">
               <%= link_to album.title, album_path(album),:class=>"text-capitalize text" %>
-            </div>                 
-            <%# <div class="middle2"> %>
-              <%# <%= link_to album.description, album_path(album),:class=>"text" %>         
-              <%# <br> %>
-              <%# <%= link_to "Delete", album_path(album), data: { %>
-                <%# #  turbo_method: :delete, %>
-                <%# #  turbo_confirm: "Do you want to delete the Album?" %>
-                <%# #  }, :class=>"text" %>         
-            <%# </div>  %>
+            </div> 
           </div>
         <%end %>
       <%else%>      
         <h4 class="">No Album Created Yet</h4>       
       <%end%>     
     </div>
-      <%# <%end%>
   </div>
 </div>

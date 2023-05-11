@@ -1,27 +1,20 @@
 .explore {
+  box-sizing: border-box;
    padding: 0 1rem 3rem;
   .search_box {
-    // background-color: rgb(255, 251, 228);
-    // border:1px solid red;
     width: 100%;
     min-width: 260px;
-    border-bottom: 2px solid rgb(216, 216, 216);
+    // border-bottom: 2px solid rgb(216, 216, 216);
 
     .search_form {
       max-width: 600px;
       min-width: 270px;
-
-      // border-radius: 50%;
-      // border:1px solid rgb(129, 129, 33);
       .search {
         border-radius: 18px 0 0 18px;
         font-size: large;
         color: rgb(153, 118, 4);
         border: 2px solid rgb(157, 119, 36);
         border-right: none;
-        // min-width: 270px;
-        // outline:2px solid rgb(255, 200, 0);
-
       }
 
       .search_btn {
@@ -47,18 +40,15 @@
       color: rgb(111, 108, 86);
       text-shadow: 0 2px 4px rgb(255, 255, 119);
     }
-    .tag_box{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      .links{
-        background-color: rgb(255, 238, 0);
-        color: rgb(150, 75, 1);
-        &:hover{
-          background-color: rgb(231, 216, 0);
-          box-shadow:0 0 4px orange;
-        }
-       } 
+
+    .tag{
+      .btn{
+      border:2px solid rgb(233, 194, 54);
+      background-color: rgb(233, 227, 205);
+      &:hover{
+        background-color: rgb(228, 190, 0);
+      }
+      }
     }
   }
 
@@ -66,59 +56,33 @@
   .album_box {
     max-width: 290px;
     min-width: 150px;
-    max-height: 280px;
-    min-height: 180px;
+    // max-height: 226px;
     border-radius: 5px;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(255, 255, 253);
-    box-shadow: 0 0 5px rgb(159, 158, 138);
-
     .image{
-      // max-width: 100%;
-      // min-width: 100%;
       border-radius: 5px;
       width: 100%;
-      // min-height:220px;
-      // border:2px solid black;
     }
 
     .middle {
       transition: .5s ease;
       opacity: 0;
       position: relative;
-      bottom: 60%;
+      bottom: 48%;
       left: 3%;
       text-align: center;
       transition-duration: 0.5s;
 
       .text {
         text-decoration: none;
-        color: rgb(67, 67, 0);
+        color: rgb(23, 23, 1);
         font-size: 1.5rem;
         font-weight: bold;
         text-shadow: 0 4px 4px rgb(163, 154, 124);
       }
     }
-
-    .middle2 {
-      @extend .middle;
-      position: relative;
-      bottom: 50%;
-      left: 3%;
-
-      .text {
-        @extend .text;
-        color:rgb(120, 120, 120);
-        text-shadow: none;
-        font-size: 1.1rem;
-      }
-    }
-
     &:hover {
-      background-color: rgb(255, 255, 255);
-      box-shadow: 0 0 2px rgb(173, 149, 52);
-
       .image {
         transition-duration: 0.4s;
         opacity: 0.2;
@@ -126,63 +90,54 @@
 
       .middle {
         opacity: 1;
-
-
       }
     }
   }
 
+  .image_box{
+    min-width: 200px;
+    max-width: 250px;
+
+    .image{
+       border-radius: 5px;
+      width: 100%;
+    }
+  }
 
   .links {    
     text-align: center;
-    font-size: 1rem;
-    min-width: 100px;
+    font-size: 1rem;;
+    width:fit-content;
     max-width: 120px;
     max-height: 32px;
-    // padding: 0.1rem;
     border-radius: 3px;
     box-shadow: 0 0 2px rgb(184, 166, 0);
     background-color: rgb(241, 204, 68);
-    // font-family: sans-serif;
-    color: rgb(53, 53, 53);
+    color: rgb(31, 31, 31);
     border: 2px solid rgb(241, 204, 68);
     text-decoration: none;
     &:hover{
       background-color: rgb(229, 180, 2) ;
-      // box-shadow: 0 0 5px rgb(199, 170, 6);
       border: 2px solid rgb(229,204,2);
     }
   }
-  .del{
-    @extend .links;
-    // width:200px;
-  }
-
 
   .head {
     color: rgb(0, 0, 0);
     padding:1.4rem 0;
     font-weight: 500;
     text-transform: capitalize;
-    // background-color: rgba(80, 76, 60, 0.9);
     background-color: rgb(213, 213, 213);
     box-shadow: 0 0 6px rgba(134, 134, 134, 0.9) ;
     .box {
       max-width: 220px;
       height: auto ;
-      // min-height: 190px;
       max-height: 200px;
       .p_box{
         width: 100%;
         height: 100%;
         border-radius: 50%;
       }
-      
-      // max-block-size: 0px;
-      // border-radius: 50%;
-      // position: relative;
-      // top:50;
-      // bottom:10%;
     }
 
     .name {
@@ -200,8 +155,6 @@
     box-shadow: 0 3px 10px rgb(77, 76, 50);
     color: rgb(101, 99, 77);
     margin: 3rem 0;
-    // font-size: 4rem;
-    // height:3rem;
   }
 
 }

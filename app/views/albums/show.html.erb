@@ -13,10 +13,10 @@
           <h6 class="name "><%= @album.description%></h6>
           <h6 class="name "><%= @album.all_tags%></h6>
           <% if current_user == @album.user %>
-            <%= link_to "Delete Album", album_path(@album), data: {
+            <%= link_to "Delete", album_path(@album), data: {
                  turbo_method: :delete,
                  turbo_confirm: "Do you want to delete the Album?"
-                 }, :class=>"links col"  %>
+                 }, :class=>"links"  %>
           <%end%> 
           <div><p class="count mt-3">Total pictures: <%= @album.images.count%></p></div>
         </div>
@@ -31,7 +31,6 @@
       <%= form_with model: @album do |form| %> 
         <%= form.submit "Upload", class:"links col-4" %>
         <%= form.file_field :images, multiple: true, :class=>"field col-7" %>
-        <%# <%= form.file_field :images, multiple: true, :class=>"field col-8" %>
       <%end%>
     </div>
     <% if current_user == @album.user %>
@@ -45,7 +44,7 @@
   </div>
  
   <div class="container mt-5 ">
-    <div class="container-xxl justify-content-center mx-auto m-4 row">
+    <div class="container-xxl justify-content-center mx-auto row">
       <%= render "image" %>
     </div>
   </div> 

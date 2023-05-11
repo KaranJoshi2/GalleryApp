@@ -1,43 +1,36 @@
 <% if @album.images.attached? %>
-  <% @album.images.each do |image|%>
-    <div class="p-0 m-2 hover-none album_box">
-      <div class="p-0 image_box  m-1 col">  
+  <% @album.images.each_with_index do |image, index|%>
+    <div class="p-0 image_box  m-1 col" data-bs-toggle="modal" data-bs-target=<%='#a'+index.to_s%>>  
+      <div class="text-center ">
         <%= image_tag image, :class=>"image"%>  
-        <div class="text-center "> 
-          <button type="button" class="text-captialize links " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-           open image
-          </button>
-        </div> 
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <%= image_tag image,  class:"container-fluid image"%>
-              </div>
-              <div class="modal-footer">
-                  <% if current_user == @album.user %>
-                    <%= link_to "Delete",purge_album_path(image), data: {
-                          turbo_method: :delete,
-                          turbo_confirm: "Are you sure?"
-                      },:class=>"btn btn-dark text-capitalize" %>
-                  <%end%> 
-                <%# <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> %>
-                <%= link_to "download", rails_blob_path(image, disposition: 'attachment'),class: 'btn btn-dark text-capitalize'  %>
-                <%# <button type="button" class="btn btn-primary">Understood</button> %>
-              </div>
-            </div>
+      </div> 
+    </div>
+    <div class="modal fade" id=<%='a'+ index.to_s%> data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <%= image_tag image,  class:"container-fluid image"%>
+          </div>
+          <div class="modal-footer">
+              <% if current_user == @album.user %>
+                <%= link_to "Delete",purge_album_path(image), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                  },:class=>"btn btn-dark text-capitalize" %>
+              <%end%> 
+            <%= link_to "download", rails_blob_path(image, disposition: 'attachment'),class: 'btn btn-dark text-capitalize'  %>
           </div>
         </div>
-      </div>  
-    </div>    
-      <!-- Modal -->
-  
-   
+      </div>
+    </div>  
   <%end%>
+<%else%>
+   <h4>No images uploaded</h4>
 <%end %>
+
 
 
 

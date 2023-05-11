@@ -10,13 +10,15 @@
     <br>
     <%= render "tag"%>
   </div>
+
+  <hr>
   <div class="my-5">
     <% if @albums.empty? %>
       <p class="text-center alb">No albums found.</p>
     <% else %>
       <ul class="container-xxl justify-content-center mx-auto row">
         <% @albums.each do |album|%>
-          <div class="album_box m-1 col text-capitalize">    
+          <div class="p-1 album_box m-1 col text-capitalize">    
             <% if album.images.attached? %>         
              <%= image_tag album.images.first, :class=>"image"%>
             <%else%>
@@ -25,9 +27,6 @@
             <div class="middle">
               <%= link_to album.title, album_path(album),:class=>"text" %>
             </div>                 
-            <div class="middle2">
-              <%= link_to album.description, album_path(album),:class=>"text" %>
-            </div>  
           </div>      
         <%end%>
       </ul>
