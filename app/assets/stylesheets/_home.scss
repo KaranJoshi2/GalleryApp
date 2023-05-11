@@ -65,24 +65,29 @@
 
   .album_box {
     max-width: 290px;
-    min-width: 180px;
+    min-width: 150px;
     max-height: 280px;
+    min-height: 180px;
     border-radius: 5px;
     justify-content: space-around;
+    align-items: center;
     background-color: rgb(255, 255, 253);
     box-shadow: 0 0 5px rgb(159, 158, 138);
 
     .image{
       // max-width: 100%;
       // min-width: 100%;
+      border-radius: 5px;
       width: 100%;
+      // min-height:220px;
+      // border:2px solid black;
     }
 
     .middle {
       transition: .5s ease;
       opacity: 0;
       position: relative;
-      bottom: 70%;
+      bottom: 60%;
       left: 3%;
       text-align: center;
       transition-duration: 0.5s;
@@ -99,12 +104,13 @@
     .middle2 {
       @extend .middle;
       position: relative;
-      bottom: 62%;
+      bottom: 50%;
       left: 3%;
 
       .text {
         @extend .text;
-        color:rgb(150, 150, 150);
+        color:rgb(120, 120, 120);
+        text-shadow: none;
         font-size: 1.1rem;
       }
     }
@@ -127,27 +133,40 @@
   }
 
 
-  .links {
+  .links {    
+    text-align: center;
     font-size: 1rem;
-    max-width: 100px;
+    min-width: 100px;
+    max-width: 120px;
     max-height: 32px;
-    padding: 0.3rem;
+    // padding: 0.1rem;
     border-radius: 3px;
-    box-shadow: 0 0 4px rgb(217, 196, 0);
+    box-shadow: 0 0 2px rgb(184, 166, 0);
     background-color: rgb(241, 204, 68);
     // font-family: sans-serif;
     color: rgb(53, 53, 53);
-    border: none;
+    border: 2px solid rgb(241, 204, 68);
     text-decoration: none;
+    &:hover{
+      background-color: rgb(229, 180, 2) ;
+      // box-shadow: 0 0 5px rgb(199, 170, 6);
+      border: 2px solid rgb(229,204,2);
+    }
+  }
+  .del{
+    @extend .links;
+    // width:200px;
   }
 
 
   .head {
-    color: white;
+    color: rgb(0, 0, 0);
     padding:1.4rem 0;
+    font-weight: 500;
     text-transform: capitalize;
-    background-color: rgba(80, 76, 60, 0.9);
-    box-shadow: 0 0 6px rgba(75, 72, 58, 0.9) ;
+    // background-color: rgba(80, 76, 60, 0.9);
+    background-color: rgb(213, 213, 213);
+    box-shadow: 0 0 6px rgba(134, 134, 134, 0.9) ;
     .box {
       max-width: 220px;
       height: auto ;

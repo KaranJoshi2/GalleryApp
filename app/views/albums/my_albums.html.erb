@@ -5,7 +5,7 @@
         <div class="row container " >
           <h2 class="name col "><%= current_user.email%></h2> <%= link_to "Edit Profile", edit_user_registration_path(current_user), :class=>" links col "%>
         </div>
-         <br>
+        <br>
         <div> 
           <p class="count container ">Total Albums: <%= current_user.albums.count%></p>
         </div>
@@ -24,23 +24,23 @@
             <% if album.images.attached? %>         
               <%= image_tag album.images.first, :class=>"image"%>
             <%else%>
-              <%= image_tag "animals.jpeg", :class=>"image"%>
+              <%= image_tag "pimage (1).jpg", :class=>"image"%>
             <%end%> 
             <div class="middle">
-              <%= link_to album.title, album_path(album),:class=>"text" %>
+              <%= link_to album.title, album_path(album),:class=>"text-capitalize text" %>
             </div>                 
-            <div class="middle2">
-              <%= link_to album.description, album_path(album),:class=>"text" %>
-              <br>
-              <%= link_to "Delete", album_path(album), data: {
-                 turbo_method: :delete,
-                 turbo_confirm: "Do you want to delete the Album?"
-                 }, :class=>"text" %> 
-            </div> 
+            <%# <div class="middle2"> %>
+              <%# <%= link_to album.description, album_path(album),:class=>"text" %>         
+              <%# <br> %>
+              <%# <%= link_to "Delete", album_path(album), data: { %>
+                <%# #  turbo_method: :delete, %>
+                <%# #  turbo_confirm: "Do you want to delete the Album?" %>
+                <%# #  }, :class=>"text" %>         
+            <%# </div>  %>
           </div>
         <%end %>
       <%else%>      
-        <h4 class="">No Album Yet</h4>       
+        <h4 class="">No Album Created Yet</h4>       
       <%end%>     
     </div>
       <%# <%end%>
