@@ -22,4 +22,5 @@ test:
 
 production:
   <<: *default
-  database: gallery_prod
+  database: <%= ENV['DATABASE_URL'] %>
+
