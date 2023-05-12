@@ -1,29 +1,29 @@
 <div class=" form border mx-auto py-4">
-<h2 class="text-center label">Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-box mx-auto p-2">
-    <%= f.label :email, :class=>"label" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", :class=>"type-box" %>
-  </div>
-
-  <div class="form-box mx-auto p-2">
-    <%= f.label :password, :class=>"label" %><br />
-    <%= f.password_field :password, autocomplete: "current-password", :class=>"type-box" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
+  <h2 class="text-center label">Log in</h2>
+  
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-box mx-auto p-2">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me, :class=>"label" %>
+      <%= f.label :email, :class=>"label" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", :class=>"type-box" %>
+    </div>
+  
+    <div class="form-box mx-auto p-2">
+      <%= f.label :password, :class=>"label" %><br />
+      <%= f.password_field :password, autocomplete: "current-password", :class=>"type-box" %>
+    </div>
+  
+    <% if devise_mapping.rememberable? %>
+      <div class="form-box mx-auto p-2">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me, :class=>"label" %>
+      </div>
+    <% end %>
+  
+    <div class="form-box mx-auto p-2">
+      <%= f.submit "Log in", :class=>"type-box btn" %>
     </div>
   <% end %>
-
-  <div class="form-box mx-auto p-2">
-    <%= f.submit "Log in", :class=>"type-box btn" %>
+  <div class="link_box">
+    <%= render "devise/shared/links" %>
   </div>
-<% end %>
-<div class="link_box">
-<%= render "devise/shared/links" %>
-</div>
 </div>

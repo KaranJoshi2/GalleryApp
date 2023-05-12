@@ -1,45 +1,45 @@
 <div class=" form border mx-auto py-4">
-<h2 class="text-center label">Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="form-box mx-auto p-2">
-    <%= f.label :email, :class=>"label" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", :class=>"type-box" %>
-  </div>
+  <h2 class="text-center label">Edit <%= resource_name.to_s.humanize %></h2>
   
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="form-box mx-auto p-2">
-    <%= f.label :password, :class=>"label" %> <i class="fs-6">(leave blank,if don't want to change)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password", :class=>"type-box" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em class="fs-6"><%= @minimum_password_length %> characters minimum</em>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+  
+    <div class="form-box mx-auto p-2">
+      <%= f.label :email, :class=>"label" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", :class=>"type-box" %>
+    </div>
+    
+  
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
+  
+    <div class="form-box mx-auto p-2">
+      <%= f.label :password, :class=>"label" %> <i class="fs-6">(leave blank,if don't want to change)</i><br />
+      <%= f.password_field :password, autocomplete: "new-password", :class=>"type-box" %>
+      <% if @minimum_password_length %>
+        <br/>
+        <em class="fs-6"><%= @minimum_password_length %> characters minimum</em>
+      <% end %>
+    </div>
+  
+    <div class="form-box mx-auto p-2">
+      <%= f.label :password_confirmation, :class=>"label" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", :class=>"type-box" %>
+    </div>
+  
+    <div class="form-box mx-auto p-2">
+      <%= f.label :current_password, :class=>"label" %> <i class="fs-6">(need current password to confirm changes)</i><br />
+      <%= f.password_field :current_password, autocomplete: "current-password", :class=>"type-box" %>
+    </div>
+  
+    <div class="form-box mx-auto p-2">
+      <%= f.submit "Update", :class=>"type-box btn" %>
+    </div>
+  <% end %>
+  <hr>
+  <div class="link_box text-center"><%= button_to "Delete Account?", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, :class=>"btn" %></div>
+  <div class="link_box text-center">
+    <%= link_to "Back", my_albums_path, :class=>"btn"%>
   </div>
-
-  <div class="form-box mx-auto p-2">
-    <%= f.label :password_confirmation, :class=>"label" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", :class=>"type-box" %>
-  </div>
-
-  <div class="form-box mx-auto p-2">
-    <%= f.label :current_password, :class=>"label" %> <i class="fs-6">(need current password to confirm changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password", :class=>"type-box" %>
-  </div>
-
-  <div class="form-box mx-auto p-2">
-    <%= f.submit "Update", :class=>"type-box btn" %>
-  </div>
-<% end %>
-<hr>
-<div class="link_box text-center"><%= button_to "Delete Account?", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, :class=>"btn" %></div>
-<div class="link_box text-center">
-<%= link_to "Back", my_albums_path, :class=>"btn"%>
-</div>
 </div>

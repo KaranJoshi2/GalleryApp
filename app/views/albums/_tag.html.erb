@@ -1,8 +1,7 @@
 <div class=" tag  container text-center">
   Tags:  
   <% tag_done = []%>
-  <% @albums.each do |album| %>
-    
+  <% @albums.each do |album| %>    
     <% album.tags.each do |tag| %>
       <% if !tag_done.include?(tag.name) %>
         <%= link_to tag.name, album_path(album), class: "p-1 btn m-1" %>

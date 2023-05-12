@@ -1,33 +1,33 @@
 <div class=" form border mx-auto py-4">
-<h2 class="text-center label">Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="form-box mx-auto p-2">
-    <%= f.label :email, :class=>"label" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", :class=>"type-box" %>
+  <h2 class="text-center label">Sign up</h2>
+  
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+  
+    <div class="form-box mx-auto p-2">
+      <%= f.label :email, :class=>"label" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", :class=>"type-box" %>
+    </div>
+  
+    <div class="form-box mx-auto p-2">
+      <%= f.label :password, :class=>"label" %>
+      <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br/>
+      <%= f.password_field :password, autocomplete: "new-password", :class=>"type-box" %>
+    </div>
+  
+    <div class="form-box mx-auto p-2">
+      <%= f.label :password_confirmation, :class=>"label" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", :class=>"type-box" %>
+    </div>
+  
+    <div class="form-box mx-auto p-2">
+      <%= f.submit "Sign up", :class=>"type-box btn" %>
+    </div>
+  <% end %>
+  
+  <div class="link_box">
+    <%= render "devise/shared/links" %>
   </div>
-
-   <div class="form-box mx-auto p-2">
-    <%= f.label :password, :class=>"label" %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", :class=>"type-box" %>
-  </div>
-
-  <div class="form-box mx-auto p-2">
-    <%= f.label :password_confirmation, :class=>"label" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", :class=>"type-box" %>
-  </div>
-
-  <div class="form-box mx-auto p-2">
-    <%= f.submit "Sign up", :class=>"type-box btn" %>
-  </div>
-<% end %>
-
-<div class="link_box">
-<%= render "devise/shared/links" %>
-</div>
 </div>
