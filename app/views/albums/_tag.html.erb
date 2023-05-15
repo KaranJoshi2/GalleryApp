@@ -4,7 +4,7 @@
   <% @albums.each do |album| %>    
     <% album.tags.each do |tag| %>
       <% if !tag_done.include?(tag.name) %>
-        <%= link_to tag.name, album_path(album), class: "p-1 btn m-1" %>
+        <%= link_to tag.name, album_path(album), class: "p-1 px-2 btn m-1" %>
         <% tag_done.push(tag.name) %>
       <%end%>  
     <% end %>
