@@ -1,6 +1,6 @@
 <% if @album.images.attached? %>
   <% @album.images.each_with_index do |image, index|%>
-    <div class="p-0 image_box  m-1 col" data-bs-toggle="modal" data-bs-target=<%='#a'+index.to_s%>>  
+    <div class="p-0 image_box  m-2 col" data-bs-toggle="modal" data-bs-target=<%='#a'+index.to_s%>>  
       <div class="text-center ">
         <%= image_tag image, :class=>"image"%>  
       </div> 

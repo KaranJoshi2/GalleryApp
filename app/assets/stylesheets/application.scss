@@ -6,27 +6,32 @@
   box-sizing: border-box;
   font-family: serif;
   letter-spacing: 1px;
+  // background-color: white;
 }
 .back{
-  background-color: rgb(235, 235, 235);
-
+  // background-color: rgb(255, 255, 250);
+  
   .body {
+    // background-color: rgb(255, 255, 255);
     box-sizing: border-box;
+    // border:2px solid rgb(255, 252, 229);
+    // box-shadow: 0 0 4px yellow;
     min-height: 100%;
-    padding: 0 3rem;
+    padding: 0 2rem;
     margin: 0;
     padding-bottom: 10rem;
   }
 }
 .navbar {
   height: 5rem;
-  box-shadow: 0 0 4px rgb(142, 131, 12);
-  background-color: rgb(193, 193, 193);
+  box-shadow: 0 0 2px rgb(214, 197, 0);
+  background-color: rgb(255, 255, 255);
   margin-bottom: 0;
 
   .logo {
     margin-inline-end: 8.8rem;
     max-width: 40%;
+    // box-shadow: 0 0 2px yellow;
   }
 
   .collapse {
@@ -49,6 +54,7 @@
 
           &:hover {
             color: rgb(77, 77, 77);
+            text-shadow: 0 0 10px rgb(255, 255, 150);
             font-weight: 1000;
           }
         }
@@ -64,13 +70,14 @@
 
     @media screen and (max-width: 768px) {
       position: absolute;
+      box-shadow: 0 0 1px rgb(232, 219, 67);
       top: 90%;
       right:0%;
-      background-color:rgba(203, 203, 203, 0.999);
+      background-color:rgba(255, 255, 255, 0.999);
       .nav-item{
         width:100%;
         &:hover{
-          background-color: rgb(183, 183, 183);
+          background-color: rgb(255, 255, 255);
         }
       }
     }
